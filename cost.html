@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>average meal cost in popular travel destinations</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="traveler.html">Travel Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="etamaster.html">ETA Master</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="cost.html">Average Cost</a>
+          </li>
+      </ul>
+    <style>
+ .nav a{
+     color: #f2f2f2;
+     text-decoration:none;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+     font-size: 20px;
+        }
+
+    .nav a:hover {
+    color: pink;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+        }
+
+  .chart {
+    width: 100%;
+      }
+  body{
+    background-image: url('background2.jpeg');
+    }
+    .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 30px;
+    padding-bottom: 20pxs;
+    }
+  .center2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    }
+  h2{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1{
+      font-size: 20px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+  #main{
+    background-color: #FAEEE0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    }
+    #form1{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    #love{
+      padding-top: 10px;
+    }
+    </style>
+
+  </head>
+  <body>
+    <img src="meal.svg" alt="meal header" class="center"/>
+    <div id=main class="center2">
+    <div class="row">
+      <h1>Savoring the Diversity of American Cuisine</h1>
+      <h2>Embarking on a cross-country journey through the United States unveils a tapestry of flavors that mirrors the nation's cultural diversity. Start your day with a hearty American breakfast, perhaps indulging in classic pancakes with maple syrup or a savory breakfast burrito. The beauty of American cuisine lies in its regional distinctions, offering everything from Southern comfort food to New England seafood. For lunch, immerse yourself in the local food scene, whether it's a food truck serving gourmet sandwiches or a quaint diner offering homestyle cooking. As the day progresses, let your taste buds explore the myriad of dinner options, ranging from barbecue joints in the South to eclectic fusion restaurants in urban centers. The average cost of meals varies, but the richness of the culinary experience remains a constant throughout the vast expanse of the United States.</h2>
+
+  <form id="form1" name="form1" onchange="drawChart()" >
+
+     <select id="thedropdown">
+     <option value="breakfast">Breakfast</option>
+     <option value="lunch">Lunch</option>
+     <option value="dinner">Dinner</option>
+     </select>
+    </form>
+ 
+  <div id="mychart" class="chart"></div>
+
+<div id="love">
+  <h1>Culinary Adventures Await Across the Nation</h1>
+    <h2>A journey across America is not just a physical exploration but a delightful gastronomic adventure. Each region has its own culinary story to tell, weaving a narrative through diverse ingredients and cooking techniques. Breakfast can be as simple as a classic diner experience with eggs and bacon or as adventurous as exploring the world of avocado toasts and grain bowls. Lunchtime invites a rendezvous with the melting pot of American flavors from Tex-Mex tacos to Midwestern hotdish. As the sun sets, the dinner scene unfolds, offering a spectrum of possibilities, from seafood feasts along the coasts to hearty Midwest steakhouses. Whether you're sampling street food in vibrant urban markets or enjoying a family-style dinner in a charming small town, the beauty of American travel lies in the ever-changing, ever-delicious landscape of its meals.</h2>
+      
+    <h1>The Joy of Culinary Exploration on Your American Vacation</h1>
+      <h2>Embarking on a vacation across the United States is not just a visual feast for the eyes; it's an opportunity to tantalize your taste buds with a myriad of flavors. Start your day with a leisurely breakfast, perhaps experiencing the charm of a roadside diner or the sophistication of a brunch spot in a cosmopolitan city. For lunch, delve into the local food culture, whether it's savoring regional specialties or discovering hidden gems in bustling food markets. As the day winds down, let dinner be an exploration of culinary diversity, from classic American barbecue to innovative fusion cuisines. The cost of meals may fluctuate, but the memories created by indulging in the unique culinary offerings of each destination are priceless, making your American vacation a true feast for the senses.</h2>
+    </div>
+  </div>
+</div>
+
+    <script type="text/javascript">
+      google.charts.load("current", {'packages':["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+
+      function drawChart() {
+mymeal = document. getElementById ("thedropdown").value; info =  [
+  {
+    "meal": "breakfast",
+    "austin": 21.47,
+    "chicago": 24.72,
+    "dallas": 21.40,
+    "houston": 21.14,
+    "la": 26.42,
+    "nyc": 25.41,
+    "philly": 23.17,
+    "phoenix": 23.39,
+    "sat": 19.97,
+    "diego": 22.61
+  },
+  {
+    "meal": "lunch",
+    "austin": 25.29,
+    "chicago": 26.30,
+    "dallas": 25.77,
+    "houston": 24.04,
+    "la": 26.13,
+    "nyc": 33.26,
+    "philly": 25.73,
+    "phoenix": 25.60,
+    "sat": 19.32,
+    "diego": 24.49
+  },
+  {
+    "meal": "dinner",
+    "austin": 56.39,
+    "chicago": 70.12,
+    "dallas": 65.78,
+    "houston": 66.10,
+    "la": 69.11,
+    "nyc": 66.48,
+    "philly": 52.80,
+    "phoenix": 57.08,
+    "sat": 56.91,
+    "diego": 48.66
+  }
+]
+
+     for(i=0; i<info.length; i++) {
+    if(mymeal == info[i].meal) 
+    {
+       austin = info[i].austin;
+       chicago = info[i].chicago;
+       dallas = info[i].dallas;
+       houston = info[i].houston;
+       la = info[i].la;
+
+    }// end if
+    } // end for
+
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Cost per meal'],
+          ['Austin', austin],
+          ['Chicago', chicago],
+          ['Dallas', dallas],
+          ['Houston', houston],
+          ['Los Angeles', la]
+        ]);
+
+        var options = {
+          title: 'Average meal cost in popular travel destinations',
+          legend: {position: 'none'},
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('mychart'));
+
+        chart.draw(data, options);
+      }
+
+      // this function makes the chart responsive; include the name of the proper drawChart function; if more than one chart on page, include additional statements for each drawChart function
+    window.onresize = function() {
+    drawChart();
+    }
+    </script>
+  </body>
+</html>
+

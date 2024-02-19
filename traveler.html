@@ -1,0 +1,392 @@
+<!doctype html>
+ <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What type of traveler are you?</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Which Austin Musical Group...</title>
+
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="traveler.html">Travel Quiz</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="etamaster.html">ETA Master</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="cost.html">Average Cost</a>
+      </li>
+  </ul>
+
+  <style>
+ .nav a{
+     color: #f2f2f2;
+     text-decoration:none;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+     font-size: 20px;
+        }
+
+    .nav a:hover {
+    color: pink;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+        }
+
+  body {
+    background-image: url('background2.jpeg');
+  }
+
+
+h2{
+  font-size: 15px;
+}
+  p{
+    font-weight: bold;
+  }
+
+  #main {
+  width: 60%;
+  margin: 50px auto 50px;
+  padding: 25px;
+  background-color: #FAEEE0;
+  border-radius: 10px;
+  }
+  
+  #response {
+      display: none;
+  }
+  
+  label {
+  display: block;
+  
+  }
+
+  label:after{
+  display: block;
+  width: 90%;
+  padding: 20px;
+  margin: 10px;
+  background-color: pink;
+  border: 2px solid pink;
+  border-radius: 10px;
+  }
+  
+  button {
+  display: block;
+  justify-content: center;
+  margin: 20px;
+  }
+
+  img{
+    width: 40%;
+    position: center;
+    padding-top: 20px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+ input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: white;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid pink;
+    }
+
+  input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: pink;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+.space{
+  padding-top: 30px;
+  padding bottom: 20px;
+}
+  
+  #fun{
+    margin: 15px auto 0;
+  } 
+  
+
+  </style>
+  </head>
+  <body>
+    <div class="image-container">
+    <img src="eta.png" alt="travel header" class="header"/>
+    </div>
+    <div id="main">
+  <form  id="form1">
+<div id="fun">
+<p>Travel is not just about reaching a destination; it's a journey that leads to self-discovery and unforgettable experiences. If you've ever wondered where your wanderlust will take you next, you're in the right place. Our 'Which Type of Traveler Are You?' quiz is designed to unveil the adventurer within you and point you towards your next exciting destination. So, fasten your seatbelt, get ready for a virtual adventure, and let's explore the world together!</p>
+</div>
+<div class="row justify-content-start">
+<div class="space">
+    <div class="col-md-6">
+      <p>What's Your Ideal Travel Climate?</p>
+    </div>
+    <div class="col-md-6">
+  <label><input type="radio" name="climate" id="warm" value="tropical" /> I prefer warm, sunny weather.</label>
+  <label><input type="radio" name="climate" id="all" value="versatile" /> I enjoy all seasons, from snow to sunshine.</label>
+  <label><input type="radio" name="climate" id="cold" value="winter" /> I like to be in the snow and all bundled up.</label>
+     </div>
+  </div>
+ 
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What would you prefer to wear?</p>
+  </div>
+    <div class="col-md-6">
+   <label><input type="radio"  name="wear" id="sweater" value="winter" /> I like to wear sweaters, pants, and jackets.</label>
+  <label><input type="radio" name="wear" id="swimsuit" value="tropical" /> Everyday all day should be spent in swimsuits, shorts and flip flops.</label>
+  <label><input type="radio" name="wear" id="jeans" value="versatile" /> I like to wear jeans and a nice tee.</label>
+  </div>
+  </div>
+  
+  <div class="space">
+    <div class="col-md-6">
+  <p>How Do You Like to Spend Your Evenings on Vacation?</p>
+  </div>
+   <div class="col-md-6">
+   <label><input type="radio" name="evening" id="live" value="versatile" /> I want to experience live entertainment and shows.</label>
+  <label><input type="radio" name="evening" id="book" value="tropical" /> I prefer relaxing with a good book or by the pool.</label>
+  <label><input type="radio" name="evening" id="nightlife" value="winter" /> I like exploring the local nightlife and dining out.</label>
+ </div>
+ </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>Choose Your Adventure Level:</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="adventure" id="calm" value="tropical" /> I prefer a calm and leisurely pace.</label>
+  <label><input type="radio" name="adventure" id="balance" value="versatile" /> I like a balanced mix of relaxation and adventure.</label>
+  <label><input type="radio" name="adventure" id="extreme" value="winter" /> I'm up for extreme sports and thrill-seeking.</label>
+   </div>
+   </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What's Your Dream Accommodation?</p>
+  </div>
+   <div class="col-md-6">
+ <label><input type="radio"  name="accommodation" id="cabin" value="winter" /> A cozy cabin in the woods or mountains.</label>
+ <label><input type="radio" name="accommodation" id="hotel" value="versatile" /> A chic city hotel with a view.</label>
+  <label><input type="radio" name="accommodation" id="bungalow" value="tropical" /> A beachfront bungalow with a hammock.</label>
+   </div>
+   </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>Choose Your Dream Transportation:</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="transportation" id="cruise" value="tropical" /> A cruise ship with all-inclusive amenities.</label>
+  <label><input type="radio" name="transportation" id="bus" value="versatile" /> A road trip with stops along the way.</label>
+  <label><input type="radio" name="transportation" id="train" value="winter" /> A train journey through picturesque landscapes.</label>
+ </div>
+ </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What's Your Ideal Trip Duration?</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="duration" id="short" value="tropical" /> A short getaway of a few days.</label>
+  <label><input type="radio" name="duration" id="week" value="versatile" /> A week-long adventure-packed trip.</label>
+  <label><input type="radio" name="duration" id="long" value="winter" /> A moderate 10-day vacation.</label>
+   </div>
+   </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What's Your Foodie Style?</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="foodie" id="mix" value="tropical" /> I like a mix of dining options, from casual to upscale.</label>
+  <label><input type="radio"  name="foodie" id="fine" value="winter" /> I love fine dining and trying gourmet dishes.</label>
+    <label><input type="radio" name="foodie" id="class" value="versatile" /> I enjoy cooking classes and food tours</label>
+  </div>
+  </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>Pick Your Ideal Travel Companions:</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="travel" id="friends" value="tropical" /> I enjoy traveling with friends or family</label>
+  <label><input type="radio" name="travel" id="solo" value="versatile" /> I prefer solo travel or traveling with a significant other.</label>
+  <label><input type="radio" name="travel" id="anyone" value="winter" /> I'm open to traveling with anyone who shares my interests.</label>
+</div>
+</div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What's Your Budget Preference?</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="budget" id="flexible" value="tropical" /> I'm flexible with my budget, depending on the destination.</label>
+  <label><input type="radio" name="budget" id="moderate" value="versatile" /> I prefer a moderate budget with occasional splurges.</label>
+  <label><input type="radio" name="budget" id="splurge" value="winter" /> I'm willing to splurge for a luxurious experience.</label>
+   </div>
+   </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>Choose Your Scenic Preference:</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="scenic" id="both" value="versatile" /> I appreciate a mix of natural and urban scenery.</label>
+  <label><input type="radio"  name="scenic" id="mountain" value="winter" /> I'm drawn to scenic mountains and forests.</label>
+  <label><input type="radio" name="scenic" id="beach" value="tropical" /> I love picturesque beaches and coastal landscapes.</label>
+   </div>
+   </div>
+
+<div class="space">
+    <div class="col-md-6">
+  <p>What's Your Must-Have Travel Experience?</p>
+  </div>
+   <div class="col-md-6">
+  <label><input type="radio" name="experience" id="relax" value="tropical" /> Relaxing on a pristine beach with crystal-clear waters.</label>
+  <label><input type="radio" name="experience" id="local" value="versatile" /> Enjoying the local nightlife and entertainment.</label>
+  <label><input type="radio" name="experience" id="slope" value="winter" /> Skiing down the biggest slope at night.</label>
+   </div>
+</div>
+  </div>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+  <button type="submit" value="Submit">Submit</button>
+  </div>
+  </form>
+  
+
+  <p id="response">You are a <span id="answer"></span></p>
+  <div id="image-container"> </div>
+  
+  </div>
+  
+  <script >
+
+  
+    document.getElementById("form1").onsubmit=function() {
+       //displays the response DOM element
+      document.getElementById("response").style.display = "block";
+  
+      //resets the DOM element on submit
+      document.getElementById("answer").innerHTML = "";
+  
+      climate = document.querySelector('input[name = "climate"]:checked').value;
+  
+      wear = document.querySelector('input[name = "wear"]:checked').value;
+  
+      evening = document.querySelector('input[name = "evening"]:checked').value;
+  
+      adventure = document.querySelector('input[name = "adventure"]:checked').value;
+  
+      accommodation = document.querySelector('input[name = "accommodation"]:checked').value;
+  
+      transportation = document.querySelector('input[name = "transportation"]:checked').value;
+
+      duration = document.querySelector('input[name = "duration"]:checked').value;
+  
+      foodie = document.querySelector('input[name = "foodie"]:checked').value;
+  
+      travel = document.querySelector('input[name = "travel"]:checked').value;
+
+      budget = document.querySelector('input[name = "budget"]:checked').value;
+  
+      scenic = document.querySelector('input[name = "scenic"]:checked').value;
+  
+      experience = document.querySelector('input[name = "experience"]:checked').value;
+
+      // initialize score variables
+      tropical = 0;
+      versatile = 0;
+      winter = 0;
+  
+      //function to calculate score for each question
+      function eachscore(x){
+      if(x == "tropical") { tropical = tropical + 1}
+      if(x == "versatile") { versatile = versatile + 1}
+      if(x == "winter") { winter = winter + 1}
+      }
+      // for the above function, you could also change the 1 to a variable so you could give more points for certain questions
+  
+      //call function for each question
+      eachscore(eval("climate"));
+      eachscore(eval("wear"));
+      eachscore(eval("evening"));
+      eachscore(eval("adventure"));
+      eachscore(eval("accommodation"));
+      eachscore(eval("transportation"));
+      eachscore(eval("duration"));
+      eachscore(eval("foodie"));
+      eachscore(eval("travel"));
+      eachscore(eval("budget"));
+      eachscore(eval("scenic"));
+      eachscore(eval("experience"));
+  
+  
+  
+      all = [tropical, versatile, winter];
+  
+    //get the max score  in the array
+    maxscore = Math.max.apply(Math,all);
+  
+      // object holding scores and feedback
+      scores = [
+    { index: 0, feedback: "Tropical Traveler", image: "beach.jpeg" },
+    { index: 1, feedback: "Versatile Voyager", image: "austin.jpeg" },
+    { index: 2, feedback: "Winter Wanderer", image: "mountains.jpeg" }
+];
+  
+      //figure out which index # holds the max score
+    for(i=0; i<all.length; i++) {
+    if(all[i]==maxscore) {
+      //this gets one answer, the last one it encounters with a match
+  document.getElementById("answer").innerHTML = scores[i].feedback + "<br><img src=" + scores[i].image + " />";
+
+      //this version would allow for appending multiple answers; replace statement above
+      //document.getElementById("answer").innerHTML += scores[i].feedback + "; ";
+    }
+    }
+  
+  return false; // required to not refresh the page; just leave this here
+       }// end the submit function
+  
+  
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  
+  <img src=""
+
+  </body>
+  </html>
+  
+
+  
+  

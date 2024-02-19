@@ -1,0 +1,186 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ETA Master</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="traveler.html">Travel Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="etamaster.html">ETA Master</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="cost.html">Average Cost</a>
+          </li>
+      </ul>
+<style>
+ .nav a{
+     color: #f2f2f2;
+     text-decoration:none;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+     font-size: 20px;
+        }
+
+    .nav a:hover {
+    color: pink;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+        }
+
+input:checked + label img {
+  border:2px solid #00f;
+}
+
+body{
+background-image: url('background2.jpeg');
+}
+
+.btn-bd-primary {
+  background-color: red;
+}
+
+#main{
+  background-color: #FAEEE0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  margin-top: 30px;
+}
+
+.planet{
+width: 45%;
+}
+
+h1{
+  font-size: 25px;
+}
+
+h2{
+  padding: 10px;
+  font-size: 18px;
+}
+
+</style>
+</head>
+<body>
+<img src="header.svg" alt="travel header" class="center"/>
+<div id=main class="container text-center">
+    <div class="row">
+      <div class="col-md-8">
+      <form id="form2">
+   <div class="row">
+    <div class="col-md-4 mb-4">
+      <img src="clock.png" alt="clock" class="planet">
+      <p> How long is your travel from start - destination? In minutes. </p>
+          <p class="q time">
+          <input type="text" id="startingPoint" name="start" value="0" class="numeric" control-id="ControlID-1"></p>
+        <p></p>
+  </div>
+    <div class="col-md-4 mb-4">
+				<img src="car.png" alt="car" class="planet">
+        <p> How many total miles is the trip one way?  </p>
+				    <p class="q time">
+				    <input type="text" id="milesTrip" name="weight" value="0" class="numeric" control-id="ControlID-1"></p>
+					<p></p>
+    </div>
+      <div class="col-md-4 mb-4">
+				<img src="hat.png" alt="hat" class="planet">
+        <p> How many miles can you go on a full tank? </p>
+				    <p class="q time">
+				    <input type="text" id="milesFullTank" name="weight" value="1" class="numeric" control-id="ControlID-1"></p>
+					<p></p>
+    </div>
+<div class="row">
+    <div class="col-md-4 mb-4">
+				<img src="suitcase.png" alt="suitcase" class="planet">
+        <p> How many adults are traveling with you? </p>
+				    <p class="q time">
+				    <input type="text" id="adultsTraveling" name="weight" value="0" class="numeric" control-id="ControlID-1"></p>
+					<p></p>
+			</div>
+      <div class="col-md-4 mb-4">
+				<img src="tag.png" alt="tag" class="planet">
+        <p> How many kids are traveling with you?  </p>
+				    <p class="q time">
+				    <input type="text" id="kidsTraveling" name="weight" value="0" class="numeric" control-id="ControlID-1"></p>
+					<p></p>
+			</div>
+
+      <div class="col-md-4 mb-4">
+				<img src="pillow.png" alt="pillow" class="planet">
+        <p>  How many bathroom breaks do you want to make? </p>
+				    <p class="q time">
+				    <input type="text" id="bathroomBreaks" name="weight" value="0" class="numeric" control-id="ControlID-1"></p>
+					<p></p>
+			</div>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4">
+      <h1> Enter your travel plans to see how much time your roadtrip will be!</h1>
+      <h2> Are you eager to plan your journeys with precision and efficiency? Whether you're embarking on a road trip, commuting to work, or exploring a new city, this tool is designed to help you estimate travel times. Just enter your starting point and destination, and let our app provide you with accurate information. Make your travel experiences smoother and more enjoyable by knowing how long your journey will take. Let's get started on your path to hassle-free travel planning!"</h2>
+      <br>
+      <br>
+      <p>Your total travel time is <span id="grade">_</span> minutes.</p>
+      <p id="grade2"></p>
+      <br>
+      <button class="btn btn-primary" type="submit">Submit form</button>
+      
+    
+    </div>
+    
+      
+</form>
+
+</div>
+<script>
+ document.getElementById("form2").onsubmit=function() {
+                // Get user inputs for starting point, destination, and other fields
+                start = parseInt(document.getElementById("startingPoint").value);
+                miles = parseInt(document.getElementById("milesTrip").value);
+                tank = parseInt(document.getElementById("milesFullTank").value);
+                adults = parseInt(document.getElementById("adultsTraveling").value);
+                kids = parseInt(document.getElementById("kidsTraveling").value);
+                bathroom = parseInt(document.getElementById("bathroomBreaks").value);
+                
+                console.log("Starting Point: " + start);
+                console.log("Miles Trip: " + miles);
+                console.log("Miles Full Tank: " + tank);
+                console.log("Adults Traveling: " + adults);
+                console.log("Kids Traveling: " + kids);
+                console.log("Bathroom Breaks: " + bathroom);
+
+
+            if (tank==1) {alert("Please enter the number of miles you can go on a full tank.")}
+            if (bathroom>0) {breaks = bathroom*((kids*10)+(adults*5)) }
+            if (bathroom==0) {breaks = 0}
+            if (miles>tank) {distance = (miles/tank)*10 }
+            if (miles<tank) {distance= 0}
+         
+              
+          total = start+distance+breaks;
+
+            
+            document.getElementById("grade").innerHTML=total.toFixed(2);
+            return false;
+            };
+</script>
+</body>
+</html>
